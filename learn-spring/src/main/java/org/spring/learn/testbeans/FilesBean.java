@@ -23,9 +23,9 @@ import org.slf4j.LoggerFactory;
 @Getter
 @Setter
 public class FilesBean {
-    private String fileType;
+    private static final String lineSeparator = System.getProperty("line.separator");
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
-    static final String lineSeparator = System.getProperty("line.separator");
+    private String fileType = "";
 
 //    public FilesBean(){
 //
@@ -42,6 +42,6 @@ public class FilesBean {
     }
 
     public void printFileType(){
-        logger.info(lineSeparator+"Printing File Type"+fileType);
+        logger.info(lineSeparator + "Printing File Type => " + ((fileType == null) ? "" : fileType));
     }
 }

@@ -1,7 +1,14 @@
 package org.spring.learn.aop;
 
+import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.Pointcut;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 /**
@@ -18,9 +25,75 @@ import org.springframework.stereotype.Component;
 @Aspect
 @Component
 public class TestAspect {
+    /*==>*/
+//    @Before("allMethodVamsiPointCut()")
+//    public void testAspect(){
+//        System.out.println("Test Ascpect");
+//    }
+//
+//    @Pointcut("execution(* vamsiTest (..))")
+//    public void allMethodVamsiPointCut(){
+//
+//    }
+    /*==>*/
 
-    @Before("execution(* vamsiTest (..))")
-    public void testAspect(){
-        System.out.println("Test Ascpect");
+    /*==>*/
+//    @Before("allLoggerPointCut()")
+//    public void loggingAspect(){
+//        System.out.println("Pointcut with Advice");
+//    }
+//
+//
+//    @Pointcut("within(org.spring.learn..*)")
+//    public void allLoggerPointCut(){
+//
+//    }
+    /*==>*/
+
+    /*==>*/
+    @Before("allLoggerPointCut()")
+    public void loggingBeforeAspect(JoinPoint jointPoint) {
+        String lineSeparator = System.getProperty("line.separator");
+        Logger logger = LoggerFactory.getLogger(jointPoint.getThis().getClass());
+        logger.info(lineSeparator + " *****Start method*****" + jointPoint.toString());
+    }
+
+    @After("allLoggerPointCut()")
+    public void loggingAfterAspect(JoinPoint jointPoint) {
+        String lineSeparator = System.getProperty("line.separator");
+        Logger logger = LoggerFactory.getLogger(jointPoint.getThis().getClass());
+        logger.info(lineSeparator + " *****End method *****" + jointPoint.toString());
+    }
+
+    @Pointcut("within(org.spring.learn..*)")
+    public void allLoggerPointCut() {
+
+    }
+
+    //inline
+//    @Before(Pointcut("args(name))",retu="returnString")
+//    @AfterReturning(Pointcut="")
+//    public void inlineAdvice(){
+//
+//    }
+
+//    @AfterReturning
+//    @AfterThrowing
+
+    /*==>*/
+
+    @Around("allLoggerAroundPointCut()")
+    public void loggingAroundAspect(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
+        String lineSeparator = System.getProperty("line.separator");
+        Logger logger = LoggerFactory.getLogger(proceedingJoinPoint.getThis().getClass());
+        logger.info(lineSeparator + " *****Start method*****" + proceedingJoinPoint.toString());
+        proceedingJoinPoint.proceed();
+        logger.info(lineSeparator + " *****End method *****" + proceedingJoinPoint.toString());
+
+    }
+
+    @Pointcut("within(org.JHGJEJED.spring.learn..*)")
+    public void allLoggerAroundPointCut() {
+
     }
 }

@@ -14,5 +14,10 @@ package org.poocha;
 public class TestFetchPull {
     public static void main(String... args) {
         System.out.println("Hello joomi");
+        new TestFetchPull().testMerge();
+    }
+
+    private void testMerge(){
+        System.out.println("in test merge");
     }
 }

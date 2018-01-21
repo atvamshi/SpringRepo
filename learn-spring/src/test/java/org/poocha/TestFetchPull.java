@@ -15,4 +15,8 @@ public class TestFetchPull {
     public static void main(String... args) {
         System.out.println("Hello joomi");
     }
+
+    public void testMerge() {
+        System.out.println("in test merge");
+    }
 }

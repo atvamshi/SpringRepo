@@ -21,7 +21,4 @@ public class TestFetchPull {
         System.out.println("in test merge");
     }
 
-    public void testMerge() {
-        System.out.println("in test merge");
-    }
 }

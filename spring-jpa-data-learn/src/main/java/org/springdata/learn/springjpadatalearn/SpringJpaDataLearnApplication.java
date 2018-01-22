@@ -9,6 +9,7 @@ import org.springframework.core.annotation.Order;
 @SpringBootApplication
 @EnableAspectJAutoProxy(proxyTargetClass = true)
 @Order(SecurityProperties.ACCESS_OVERRIDE_ORDER)
+
 public class SpringJpaDataLearnApplication {
 
 	public static void main(String[] args) {

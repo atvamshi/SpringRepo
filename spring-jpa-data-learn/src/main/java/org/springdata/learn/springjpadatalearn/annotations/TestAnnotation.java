@@ -1,4 +1,4 @@
-package org.springdata.learn.springjpadatalearn.Annotations;
+package org.springdata.learn.springjpadatalearn.annotations;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
@@ -17,7 +17,7 @@ import java.lang.annotation.Target;
 
 /**
  * Project: learn-spring-parent
- * Package: org.springdata.learn.springjpadatalearn.Annotations
+ * Package: org.springdata.learn.springjpadatalearn.annotations
  * <p>
  * User: vthalapu
  * Date: 1/16/18

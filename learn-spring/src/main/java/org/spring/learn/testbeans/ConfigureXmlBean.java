@@ -21,24 +21,24 @@ import org.springframework.context.annotation.Scope;
 public class ConfigureXmlBean {
     private static int instances = 0;
 
-//    @Bean
-////    @Scope(value= ConfigurableBeanFactory.SCOPE_PROTOTYPE)
-//    @Scope(value= ConfigurableBeanFactory.SCOPE_SINGLETON)
-//    @Qualifier("NoArgCons")
-//    public FilesBean getFilesBean(){
-//        instances = instances+ 1;
-//        System.out.println("SCOPE_SINGLETON Bean -> "+ instances);
-//        return new FilesBean("hello");
-//    }
-
     @Bean
 //    @Scope(value= ConfigurableBeanFactory.SCOPE_PROTOTYPE)
     @Scope(value = ConfigurableBeanFactory.SCOPE_SINGLETON)
-    @Qualifier("AllArgCons")
-    public FilesBean getFilesBeanWithConsTructor() {
+    @Qualifier("NoArgCons")
+    public FilesBean getFilesBean() {
         instances = instances + 1;
-        System.out.println("Prototyped Bean -> " + instances);
-        return new FilesBean();
+        System.out.println("SCOPE_SINGLETON Bean -> " + instances);
+        return new FilesBean("hello");
     }
+
+//    @Bean
+////    @Scope(value= ConfigurableBeanFactory.SCOPE_PROTOTYPE)
+//    @Scope(value = ConfigurableBeanFactory.SCOPE_SINGLETON)
+//    @Qualifier("AllArgCons")
+//    public FilesBean getFilesBeanWithConsTructor() {
+//        instances = instances + 1;
+//        System.out.println("Prototyped Bean -> " + instances);
+//        return new FilesBean("AllArgCons");
+//    }
 
 }

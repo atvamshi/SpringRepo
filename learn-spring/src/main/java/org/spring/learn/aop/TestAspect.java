@@ -92,7 +92,7 @@ public class TestAspect {
 
     }
 
-    @Pointcut("within(org.JHGJEJED.spring.learn..*)")
+    @Pointcut("within(org.spring.fjbhj.learn..*)")
     public void allLoggerAroundPointCut() {
 
     }

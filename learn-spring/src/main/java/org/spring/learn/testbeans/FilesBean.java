@@ -27,15 +27,6 @@ public class FilesBean {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
     private String fileType = "";
 
-//    public FilesBean(){
-//
-//    }
-//
-//    public FilesBean(String fileType){
-//        this.fileType = fileType;
-//
-//    }
-
 
     public void methodFilesBean(){
         logger.info(lineSeparator+"Inside @FilesBean");

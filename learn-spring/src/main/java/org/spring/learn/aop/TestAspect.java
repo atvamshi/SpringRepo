@@ -55,14 +55,14 @@ public class TestAspect {
     public void loggingBeforeAspect(JoinPoint jointPoint) {
         String lineSeparator = System.getProperty("line.separator");
         Logger logger = LoggerFactory.getLogger(jointPoint.getThis().getClass());
-        logger.info(lineSeparator + " *****Start method*****" + jointPoint.toString());
+        logger.debug(lineSeparator + " *****Start method*****" + jointPoint.toString());
     }
 
     @After("allLoggerPointCut()")
     public void loggingAfterAspect(JoinPoint jointPoint) {
         String lineSeparator = System.getProperty("line.separator");
         Logger logger = LoggerFactory.getLogger(jointPoint.getThis().getClass());
-        logger.info(lineSeparator + " *****End method *****" + jointPoint.toString());
+        logger.debug(lineSeparator + " *****End method *****" + jointPoint.toString());
     }
 
     @Pointcut("within(org.spring.learn..*)")

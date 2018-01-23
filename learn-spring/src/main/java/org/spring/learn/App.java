@@ -4,9 +4,7 @@ import org.spring.learn.testbeans.FilesBean;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
-import org.springframework.scheduling.annotation.EnableScheduling;
 
 /**
  * Project: learn-spring
@@ -21,16 +19,17 @@ import org.springframework.scheduling.annotation.EnableScheduling;
  */
 @SpringBootApplication
 @EnableAspectJAutoProxy(proxyTargetClass = true)
-@ComponentScan(basePackages = {"org.spring.learn"})
-@EnableScheduling
+//@ComponentScan(basePackages = {"org.spring.learn"})
+//@EnableScheduling
 public class App {
 
     public static void main(String...args){
 
         ApplicationContext appContxt = SpringApplication.run(App.class,args);
         appContxt.getBean(FilesBean.class).methodFilesBean();
-        appContxt.getBean(FilesBean.class).methodFilesBean();
-        appContxt.getBean(FilesBean.class).printFileType();
+//        appContxt.getBean(FilesBean.class).methodFilesBean();
+//        appContxt.getBean(FilesBean.class).printFileType();
+        appContxt.getBean(WelcomeMessage.class).printWelcomBanner();
     }
 
 }

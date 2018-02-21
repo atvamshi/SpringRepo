@@ -1,5 +1,6 @@
 package org.springdata.learn.springjpadatalearn;
 
+import org.springframework.beans.factory.BeanFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.security.SecurityProperties;
@@ -17,6 +18,8 @@ public class SpringJpaDataLearnApplication {
 
 	public static void main(String[] args) {
 
-		SpringApplication.run(SpringJpaDataLearnApplication.class, args);
+		BeanFactory beanFactory = SpringApplication.run(SpringJpaDataLearnApplication.class, args);
+		beanFactory.getBean(WelcomemessagePage.class).printWelcomeMessageBanner();
+
 	}
 }

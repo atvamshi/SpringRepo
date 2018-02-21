@@ -32,7 +32,7 @@ public class WelcomemessagePage {
         System.out.println("└─┘┴  ┴└─┴┘└┘└─┘  └┘┴  ┴ ┴");
         System.out.println("***************************************************************************************");
 
-        System.out.println(" Spring Activ Profile --> " + propertiesBean.getSpringProfilesActive());
+        System.out.println(" Spring Active Profile --> " + propertiesBean.getSpringProfilesActive());
         System.out.println(" Server Port --> " + propertiesBean.getServerPort());
         System.out.println(" Management Port --> " + propertiesBean.getManagementPort());
 
